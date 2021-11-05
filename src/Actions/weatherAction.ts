@@ -4,8 +4,8 @@ import { RootState } from '../Store/index'
  export const getweather=(city:string):ThunkAction<void,RootState,null,WeatherAction> =>{
 return  async dispatch=>{
     try{
-      //const APP_KEY=
-const res =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.APP_KEY}`)
+      const APP_KEY="9c84c1d27535932611fc4e27ad979739"
+const res =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APP_KEY}`)
 
 if(!res.ok){
     const resData:WeatherError =await res.json()
